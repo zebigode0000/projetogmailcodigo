@@ -1,0 +1,10 @@
+<h1>Projetos</h1>
+<a href="/criar/">Criar Novo Projeto</a>
+<ul>
+{% for projeto in projetos %}
+    <li>
+        {{ projeto.nome }} - {{ projeto.intuito }}
+        <a href="{% url 'solicitar_exclusao' projeto.id %}">Excluir</a>
+    </li>
+{% endfor %}
+</ul>

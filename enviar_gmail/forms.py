@@ -1,4 +1,10 @@
 from django import forms
+from .models import Projeto
 
-class CodeVerificationForm(forms.Form):
-    code = forms.CharField(label='Código de verificação', max_length=6)
+class ProjetoForm(forms.ModelForm):
+    class Meta:
+        model = Projeto
+        fields = ['nome', 'intuito']
+
+class CodigoConfirmacaoForm(forms.Form):
+    codigo = forms.CharField(max_length=6)
